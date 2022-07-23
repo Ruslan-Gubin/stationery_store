@@ -1,0 +1,24 @@
+@mixin cart-main($colums, $rows, $padding) {
+display: grid;
+grid-template-columns: $colums;
+grid-template-rows: $rows;
+grid-gap: 5px  5px;
+padding: $padding;
+}
+
+
+
+
+
+
+
+
+
+
+@mixin fonntSize ($a,$b) {
+    font-size: $a;
+    color: $b;
+}
+.test-p{
+    @include fonntSize(30px, red)
+}

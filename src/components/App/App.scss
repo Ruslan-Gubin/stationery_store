@@ -1,0 +1,12 @@
+body {
+  font-family: $CormSemiBold;
+  line-height: 1.7;
+  @include grid-body(repeat(300px, 1fr), repeat(3, 1fr), 10px);
+
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@include scloll-main($spasing-small, $ccb, $border-radius-average, $white);

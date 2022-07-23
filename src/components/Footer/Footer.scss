@@ -1,0 +1,35 @@
+#footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    & .footer-container{
+        width: 60%;
+        margin: 0 auto;
+    }     
+}
+
+    .footer-element {
+        &__title {
+        }
+        &__text {
+        }
+        &__logo {
+            padding-top: 20px;
+            margin-left: 200px;
+            width: 70%;
+            height: 250px;
+        }
+        &__coperait {
+        }
+        
+    }
+
+
+
+
+
+
+
+
+
+

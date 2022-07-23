@@ -1,0 +1,54 @@
+.products-container {
+  grid-area: products;
+  @extend %grid-card-maxmed;
+  & .products-element {
+    @include cart-main($card-grid, $card-rows, 20px);
+    &:hover {
+      box-shadow: $box-shadow;
+      background-color: $white;
+      border-radius: 10px;
+    }
+    &__name {
+      grid-row: 3;
+      grid-column: 1/-1;
+      font-size: 18px;
+      color: $c80;
+      line-height: 1;
+    }
+    &__img {
+      justify-self: $position-center;
+      width: 100%;
+      grid-row: 1;
+      grid-column: 1/-1;
+      cursor: pointer;
+    }
+    &__price {
+      justify-self: $position-center;
+      align-self: $position-center;
+      grid-row: 2;
+      grid-column: 1/4;
+      font-family: $Montserat;
+      font-size: 17px;
+      color: $c80;
+    }
+    &__oldprice {
+      justify-self: $position-center;
+      align-self: $position-center;
+      grid-row: 2;
+      grid-column: 4/-1;
+      font-family: $Montserat;
+      font-size: 17px;
+      color: $red-light;
+      text-decoration: line-through;
+    }
+    &__button {
+      grid-row: 4;
+      grid-column: 1/4;
+      @extend %btn-buy;
+    }
+    &__button_active {
+      color: $light;
+      background-image: $header-gradient-message;
+    }
+  }
+}

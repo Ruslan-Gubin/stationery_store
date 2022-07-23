@@ -1,0 +1,39 @@
+@import 'mixin/cartmain';
+@import 'mixin/gridBody';
+@import 'mixin/scrollStyle';
+
+
+@mixin stop-scroll {
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+// @mixin btn-icon ($name, $icon-width,$icon-wight,$horizontal-position){
+//   @extend %btn-icon;
+
+//   padding-#{horizontal-position}: $icon-wight + 20px;
+
+//   &::before {
+//     width: $icon-wight;
+//     height: $icon-width;
+ 
+    
+//   #{$horizontal-position}: 10px;
+//   background-image: url("/src/img/icons/#{$name}.png");
+
+//  }
+// }
+// .interpolation .btn.v2 {
+//     @include btn-icon('favIcon', 20px, 20px, 'right')
+// }
+
+// .itt{
+//    background-image: url('/src/img/icons/favIcon.png');
+// }

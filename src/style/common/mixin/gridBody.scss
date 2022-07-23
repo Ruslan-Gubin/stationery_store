@@ -1,0 +1,10 @@
+@mixin grid-body($columns, $rows, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-gap: $gap;
+    grid-template-areas: 
+    "header header"
+    "sidebar products"
+    "footer footer";
+}

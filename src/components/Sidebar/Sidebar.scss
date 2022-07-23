@@ -1,0 +1,15 @@
+#sidebar {
+
+  justify-self: center;
+  grid-area: sidebar;
+  color: $c80;
+
+  .sidebar-container {
+    padding: 20px;
+    font-size: 25px;
+    .sidebar-item {
+      cursor: pointer;
+    }
+    
+  }
+}

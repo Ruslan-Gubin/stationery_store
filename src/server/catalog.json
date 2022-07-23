@@ -1,0 +1,142 @@
+[
+    {
+        "id": "el1",
+        "name": "Тетрадь в линейку КФОБ Великолепная пятерка24л",
+        "img": "https://i.ibb.co/k1Yg91h/594305-238x238x70.jpg",
+        "price": 12,
+        "oldPrice": 15
+    },
+    {
+        "id": "el2",
+        "name": "Тетрадь в линейку Artichoke А5 24 л, кремовые страницы",
+        "img": "https://i.ibb.co/Y0gFRVq/594334-238x238x70.jpg",
+        "price": 170,
+        "oldPrice": 566
+    },
+    {
+        "id": "el3",
+        "name": "Тетрадь в линейку Hatber 12л",
+        "img": "https://i.ibb.co/zxt93Yd/594335-238x238x70.jpg",
+        "price": 123,
+        "oldPrice": 554
+    },
+    {
+        "id": "el4",
+        "name": "Тетрадь нелинованный на спирали Fabriano 'EcoQua' A5 70 л 85 г, обложка малиновая" ,
+        "img": "https://i.ibb.co/F06GNfy/594505-238x238x70.jpg",
+        "price": 126,
+        "oldPrice": 156
+    },
+    {
+        "id": "el5",
+        "name": "Тетрадь нелинованный на скобах Fabriano 'EcoQua' A5 70 л 85 л, обложка черная",
+        "img": "https://i.ibb.co/yXg7P1t/594506-238x238x70.jpg",
+        "price": 155,
+        "oldPrice": 250
+    },
+    {
+        "id": "el6",
+        "name": "Тетрадь в линейку на скобах Fabriano 'EcoQua' A4 38 л 85 г, сл.кость, обложка желтая",
+        "img": "https://i.ibb.co/93Jtw7v/596688-238x238x70.jpg",
+        "price": 325,
+        "oldPrice": 380
+    },
+    {
+        "id": "el7",
+        "name": "Тетрадь в линейку Fabriano 'EcoQua' A4 38 л 85 г, бумага сл.кость, обложка малиновая",
+        "img": "https://i.ibb.co/gm33stM/597795-238x238x70.jpg",
+        "price": 325,
+        "oldPrice": 390
+    },
+    {
+        "id": "el8",
+        "name": "Тетрадь в клетку на спирали Fabriano 'EcoQua' A5 70 л 85 г, сл.кость, обложка черная",
+        "img": "https://i.ibb.co/d0mw278/598658-238x238x70.jpg",
+        "price": 45,
+        "oldPrice": 60
+    },
+    {
+        "id": "el9",
+        "name": "Тетрадь в клетку на скобах Fabriano EcoQua A4 38 л 85г",
+        "img": "https://i.ibb.co/28QCqj0/608995-238x238x70.jpg",
+        "price": 692,
+        "oldPrice": 780
+    },
+    {
+        "id": "el10",
+        "name": "Тетрадь в клетку Fabriano EcoQua A5 38 л 85 г, обложка бирюзовая",
+        "img": "https://i.ibb.co/ZgyB5n3/609539-238x238x70.jpg",
+        "price": 269,
+        "oldPrice": 300
+    },
+    {
+        "id": "el11",
+        "name": "Тетрадь в клетку на спирали Fabriano 'EcoQua' A4 70 л 85 г, сл.кость, обложка синяя",
+        "img": "https://i.ibb.co/HH4ZmWC/613624-238x238x70.jpg",
+        "price": 692,
+        "oldPrice": 900
+    },
+    {
+        "id": "el12",
+        "name": "Тетрадь в линейку Hatber 12л",
+        "img": "https://i.ibb.co/jRYHczH/1.jpg",
+        "price": 4,
+        "oldPrice": 6
+    },
+    {
+        "id": "el13",
+        "name": "Тетрадь в клетку на спирали Fabriano 'EcoQua' A4 70 л 85 г, обложка синяя",
+        "img": "https://i.ibb.co/0p7T7y0/image.jpg",
+        "price": 788,
+        "oldPrice": 900
+    },
+    {
+        "id": "el14",
+        "name": "Тетрадь в клетку на спирали Fabriano 'EcoQua' A4 70 л 85 г, обложка синяя",
+        "img": "https://i.ibb.co/yYhz2Yt/328314-238x238x70.jpg",
+        "price": 788,
+        "oldPrice": 990
+    },
+    {
+        "id": "el15",
+        "name": "Тетрадь в клетку на спирали Fabriano 'EcoQua' A4 70 л 85г",
+        "img": "https://i.ibb.co/DYfDBbJ/328315-238x238x70.jpg",
+        "price": 692,
+        "oldPrice": 800
+    },
+    {
+        "id": "el16",
+        "name": "Тетрадь в клетку на спирали Fabriano EcoQua A4 70 л 85 г, обложка малиновая",
+        "img": "https://i.ibb.co/nfz9fDg/328318-238x238x70.jpg",
+        "price": 692,
+        "oldPrice": 750
+    },
+    {
+        "id": "el17",
+        "name": "Тетрадь в клетку на спирали Fabriano EcoQua A4 38 л 85г",
+        "img": "https://i.ibb.co/PTsb6Ck/330874-238x238x70.jpg",
+        "price": 325,
+        "oldPrice": 500
+    },
+    {
+        "id": "el18",
+        "name": "Тетрадь в клетку на спирали Fabriano EcoQua A4 38 л 85г",
+        "img": "https://i.ibb.co/YjF7Q2y/330875-238x238x70.jpg",
+        "price": 325,
+        "oldPrice": 425
+    },
+    {
+        "id": "el19",
+        "name": "Тетрадь нелинованный на спирали Fabriano 'EcoQua' A5 70 л 85 г, обложка малиновая",
+        "img": "https://i.ibb.co/F06GNfy/594505-238x238x70.jpg",
+        "price": 126,
+        "oldPrice": 156
+    },
+    {
+        "id": "el20",
+        "name": "Тетрадь в линейку на скобах Fabriano EcoQua A4 38 л 85 г, сл.кость, обложка желтая",
+        "img": "https://i.ibb.co/93Jtw7v/596688-238x238x70.jpg",
+        "price": 325,
+        "oldPrice": 380
+    }
+]

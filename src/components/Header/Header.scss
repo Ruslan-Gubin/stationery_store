@@ -1,0 +1,48 @@
+#header {
+  grid-area: header;
+
+  .header-container {
+    background-image: $header-gradient;
+    .header-element {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__logo {
+        width: 250px;
+        height: 120px;
+      }
+      &__search {
+        width: 600px;
+        height: 50px;
+        border-radius: 15px;
+        background-color: #f7db5b;
+        font-size: 30px;
+        color: $color-text-logo;
+        &:hover {
+          background-color: #f8e381;
+        }
+      }
+      &__registration {
+        width: 30px;
+        height: 30px;
+      }
+
+      &__registration__img {
+        width: 30px;
+        height: 30px;
+      }
+      &__count {
+        position: relative;
+        top: 0;
+        left: -20px;
+        font-family: cursive;
+        color: $color-text-logo;
+        font-size: 30px;
+      }
+      &__button {
+        @extend %header-message;
+      }
+    }
+  }
+}
