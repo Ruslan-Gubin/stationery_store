@@ -1,0 +1,85 @@
+show databases;  -  просмотр баз данных
+
+use products;  - управление  или создание новой базы данных
+
+db. - обращение к базе данных
+
+db.createCollection('notebooks') создаем новую коллекцию
+
+show collections;  -  чтобы посмотреть колеции 
+
+db.dropDatabase()  -  удаляем базу 
+
+db.notebooks.insertOne({}) - добавляем документ в колекцию
+
+db.notebooks.insertMany({}) - добавляем несколько документов в колекцию
+
+db.notebooks.find()  -  получаем все документы колекции
+
+db.notebooks.find({id:'el5'}) - задаем условие поиску
+
+db.notebooks.find({price:{$lt:200}}) -  меньше чем {$lte:200} - меньше или равно
+
+db.notebooks.find({price:{$gt:200}}) -  больше чем {$gte:200} - больше или равно
+
+db.notebooks.find({price:{$ne:200}}) -  не равен условию
+
+db.notebooks.find().sort({price: 1}) - сортировка sort({price:-1}) в обратном порядке
+
+db.notebooks.find().limit(3) - задаем лимит
+
+db.notebooks.findOneAndDelete({id:'el20'}) - находим и удаляем
+
+db.notebooks.findOne({id:'el20'}) - находим один документ
+
+db.notebooks.updateOne({price: 12},{$set: {price: 14}})  - находим и заменяем значение
+
+db.notebooks.updateMany({},{$rename: {price: "fullprice"}}) - заменяе все ключи
+    
+db.notebooks.deleteOne({id: 'el19'}) - удаляем документ по указанному полю
+        
+db.notebooks.bulkWrite([     - несколько действий
+    {
+        insertOne: {
+            document: {name: 'Ruslan', age: 19}   - добавляем документ
+        }
+    },
+    {
+        deleteOne: {
+            filter: {id: 'el18'}   - удаляем документ
+        }
+    }
+])            
+        
+тип связи один ко многим
+
+db.notebooks.updateOne(
+    {name:'Ruslan'},              - находим документ
+    {
+        $set: {                   - находим и заменяем значение                        
+            posts: [                               - добавляем array 
+            {title: 'javascript', text: 'js top'},      
+            {title: 'mongo', text: 'mongo database'}
+            ]
+        }
+    }
+)    
+
+db.notebooks.findOne({name:'Ruslan'},{posts:1}) - получаем документ по постам пользователя
+
+db.notebooks.find({posts: {$elemMatch: {title: 'javascript'}}}) - получаем документ по постам пользователя
+
+db.notebooks.find({posts: {$exists: true}}) - получаем всех у кого есть posts
+    
+        
+            
+                
+            
+        
+    
+
+
+
+
+
+

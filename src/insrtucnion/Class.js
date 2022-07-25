@@ -19,7 +19,6 @@ export const animal = new Animal({
 });
     
 class Cat extends Animal {
-    
 
     constructor(options) {
         super(options),
