@@ -1,33 +1,25 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const chalk = require("chalk");
 const cors = require("cors");
-const Product = require("../models/products");
-const notebooks = require("../models/products");
+const notebooksApiRoutes = require("../routes/api-notebooks-routes");
+const MONGO_DB_PRODUCTS = require("../constants/namePassDb");
+const errorNsg = chalk.bgKeyword("white").redBright;
+const successNsg = chalk.bgKeyword("green").white;
 
 const app = express();
 
-const PORT = 4444;
-
-const dbProducts =
-  "mongodb+srv://Ruslan:gjcnfk156@cluster0.odh79.mongodb.net/products?retryWrites=true&w=majority";
-
 mongoose
-  .connect(dbProducts, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((res) => console.log("DB Product ok"))
-  .catch((err) => console.log("DB error, err"));
+  .connect(MONGO_DB_PRODUCTS)
+  .then((res) => console.log(successNsg("DB Product ok")))
+  .catch((err) => console.log(errorNsg("DB error, err")));
 
 app.use(cors());
 app.use(express.json());
+app.use(notebooksApiRoutes);
 
-app.get("/api/products", async (req, res) => {  
-await  notebooks
-  .find()
-  .then((products) =>  res.json(products))
-  .catch((error) => {
-    console.log(error);
-   });
-});
-
-app.listen(PORT, (error) => {
-  error ? console.log(error) : console.log(`Listening port ${PORT}`);
+app.listen(process.env.PORT || 4444, (error) => {
+  error
+    ? console.log(errorNsg(error))
+    : console.log(successNsg(`Listening port ${process.env.PORT || 4444}`));
 });

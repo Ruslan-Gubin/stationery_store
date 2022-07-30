@@ -1,6 +1,5 @@
-import { API_NOTEBOOKS } from "../../constants/api";
+import {  DATA_NOTEBOOKS } from "../../constants/api";
 import { ROOT_SHOPPING } from "../../constants/root";
-import { getDataCtatalog } from "../../utils/getDataApiCatalog";
 import localstorageUtils from "../../utils/localStorageUtils";
 import { error } from "../Error/Error";
 
@@ -44,7 +43,7 @@ class Shopping {
   }
   
   async render() {
-    const data = await getDataCtatalog.getData(API_NOTEBOOKS); 
+    const data = await DATA_NOTEBOOKS; 
 
     data ? this.renderShopping(data) : error.render(ROOT_SHOPPING); 
   }

@@ -1,5 +1,5 @@
 import { ROOT_SIDEBAR } from "../../constants/root";
-import { SIDEBAR_MENU } from "../../constants/SidebarMenu";
+import { SIDEBAR_MENU } from "../../server/SidebarMenu";
 
 
 

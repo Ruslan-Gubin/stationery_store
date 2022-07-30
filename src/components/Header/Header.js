@@ -1,9 +1,12 @@
 
-import { HEADER } from "../../constants/header";
+
 import { ROOT_HEADER } from "../../constants/root";
+import { HEADER } from "../../server/header";
+
 import localstorageUtils from "../../utils/localStorageUtils";
 import shoppingPage from "../Shopping/Shopping";
 import spinnerMain from "../Spinner";
+
 
 
 class Header {

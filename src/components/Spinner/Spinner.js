@@ -1,4 +1,4 @@
-import { IMG_CATALOG } from "../../constants/imgCatalog";
+import { IMG_CATALOG } from "../../server/imgCatalog";
 import { ROOT_SPINNER } from "../../constants/root";
 
 

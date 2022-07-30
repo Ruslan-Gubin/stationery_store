@@ -2,26 +2,21 @@ import { ROOT_PRODUCTS } from "../../constants/root";
 import localstorageUtils from "../../utils/localStorageUtils";
 import eventProduct from "../../utils/productEventUtils";
 import { error } from "../Error/Error";
-import { API_NOTEBOOKS } from "../../constants/api";
-import { getDataCtatalog } from "../../utils/getDataApiCatalog";
-
-
-
+import { DATA_NOTEBOOKS } from "../../constants/api";
 
 class Products {
- 
   constructor() {
     this.classNameActive = "products-element__button_active";
     this.labelAdd = "В корзину";
     this.labelRemove = "В корзине";
   }
- 
+
   renderProducts(data) {
     const productsStore = localstorageUtils.getProducts();
     let htmlCatalog = "";
     data.forEach(({ id, name, price, oldPrice, img }) => {
-      if(oldPrice == undefined){
-        oldPrice = '';
+      if (oldPrice == undefined) {
+        oldPrice = "";
       }
       let activeClass = "";
       let activeText = "";
@@ -44,7 +39,7 @@ class Products {
       </li>
       `;
     });
-    
+
     const html = `
     <ul class='products-container'>
     ${htmlCatalog}
@@ -53,30 +48,17 @@ class Products {
     ROOT_PRODUCTS.innerHTML = html;
     productsNotebook.eventListener();
   }
-  
+
   async render() {
-    const data = await getDataCtatalog.getData(API_NOTEBOOKS);
+    const data = await DATA_NOTEBOOKS;
     data ? this.renderProducts(data) : error.render(ROOT_PRODUCTS);
   }
-  
+
   eventListener() {
     eventProduct.render();
   }
-  
 }
 
 const productsNotebook = new Products();
 
 export default productsNotebook;
-
-
-
-
- 
-
-
-
-
-
-
-
