@@ -1,3 +1,2 @@
-export const API_CATALOG = 'http://myjson.dit.upm.es/api/bins/etc2';
-
+export const API_NOTEBOOKS = 'http://localhost:4444/api/products';
 

@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ProductsSchema = new mongoose.Schema(
+const productsSchema = new Schema(
   {
     id: {
       type: String,
@@ -26,4 +27,6 @@ const ProductsSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Products", ProductsSchema);
+const notebooks = mongoose.model('notebooks', productsSchema);
+
+module.exports = notebooks;

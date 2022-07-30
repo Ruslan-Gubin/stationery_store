@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// const Products = require("../models/products");
+const Product = require("../models/products");
+const notebooks = require("../models/products");
 
 const app = express();
 
@@ -12,16 +13,19 @@ const dbProducts =
 
 mongoose
   .connect(dbProducts, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("DB Product ok"))
+  .then((res) => console.log("DB Product ok"))
   .catch((err) => console.log("DB error, err"));
-
-let PRODUCTS = [];
 
 app.use(cors());
 app.use(express.json());
-// GET
-app.get("/api/products", (req, res) => {
-  res.status(200).json(PRODUCTS);
+
+app.get("/api/products", async (req, res) => {  
+await  notebooks
+  .find()
+  .then((products) =>  res.json(products))
+  .catch((error) => {
+    console.log(error);
+   });
 });
 
 app.listen(PORT, (error) => {

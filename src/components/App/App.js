@@ -4,7 +4,7 @@ import shopFooter from "../Footer";
 import spinnerMain from "../Spinner";
 import { headerShop } from "../Header/Header";
 import "../../style/index.scss";
-import testApi from "../Test-api";
+
 
 
 
@@ -23,7 +23,6 @@ class App {
     shopFooter.render();
     spinnerMain.handleClear();
     
-    testApi.render();
 
   }
 }

@@ -2,7 +2,7 @@ import { ROOT_PRODUCTS } from "../../constants/root";
 import localstorageUtils from "../../utils/localStorageUtils";
 import eventProduct from "../../utils/productEventUtils";
 import { error } from "../Error/Error";
-import { API_CATALOG } from "../../constants/api";
+import { API_NOTEBOOKS } from "../../constants/api";
 import { getDataCtatalog } from "../../utils/getDataApiCatalog";
 
 
@@ -20,9 +20,12 @@ class Products {
     const productsStore = localstorageUtils.getProducts();
     let htmlCatalog = "";
     data.forEach(({ id, name, price, oldPrice, img }) => {
+      if(oldPrice == undefined){
+        oldPrice = '';
+      }
       let activeClass = "";
       let activeText = "";
-      
+
       if (productsStore.indexOf(id) === -1) {
         activeText = this.labelAdd;
       } else {
@@ -52,7 +55,7 @@ class Products {
   }
   
   async render() {
-    const data = await getDataCtatalog.getData(API_CATALOG);
+    const data = await getDataCtatalog.getData(API_NOTEBOOKS);
     data ? this.renderProducts(data) : error.render(ROOT_PRODUCTS);
   }
   
