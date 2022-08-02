@@ -3,17 +3,10 @@ import mainSidebar from "../Sidebar";
 import shopFooter from "../Footer";
 import spinnerMain from "../Spinner";
 import shopAdmin from "../Admin/Admin";
-
 import { headerShop } from "../Header/Header";
+import postsProducts from "../Posts/Posts";
+
 import "../../style/index.scss";
-
-
-
-
-
-
-
-
 
 
 class App {
@@ -24,8 +17,8 @@ class App {
     mainSidebar.render();
     shopFooter.render();
     spinnerMain.handleClear();
-    shopAdmin.render();
-
+    // shopAdmin.render();
+    postsProducts.render();
   }
 }
 

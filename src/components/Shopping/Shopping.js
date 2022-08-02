@@ -26,9 +26,7 @@ class Shopping {
     <div class='chopping-container'>
     <div class='chopping__close'>
     <div class='chopping__close-element'>Х</div>
-    </div>
-    
-    
+    </div> 
     <table>
     ${htmlCatalog}
     <tr class='chopping-element'>
