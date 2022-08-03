@@ -50,5 +50,11 @@
       color: $light;
       background-image: $header-gradient-message;
     }
+    &__remove{
+      grid-row: 4;
+      grid-column: 4/-1;
+      @extend %btn-buy;
+      
+    }
   }
 }

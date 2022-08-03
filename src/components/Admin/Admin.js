@@ -1,6 +1,9 @@
 import { API_NOTEBOOKS } from "../../constants/api";
 import { ROOT_ADMIN } from "../../constants/root";
 import getFormData from "../../utils/getFormData";
+import dragdrop from "../../utils/dragAndDrop";
+
+
 
 
 class Admin {
@@ -12,7 +15,7 @@ class Admin {
     <div class='admin-form__close'>
     <div class='admin-form__close-element'>Х</div>
     </div>
-    <form class="admin-form" action="/" method="POST" id="formAddProduct">
+    <form  class="admin-form" action="/" method="POST" id="formAddProduct">
     <input type="text" name='id' class="admin-form__element" placeholder='id' />  
     <input type="text" name='name' class="admin-form__element" placeholder='Название товара' />  
     <input type="number"  name='price' class="admin-form__element" placeholder='Стоимость' />  
@@ -20,21 +23,23 @@ class Admin {
     <input type="text" name='img' class="admin-form__element" placeholder='Фото' />  
     <button  class="admin-form__btn" type='submit'>Создать</button>  
     </form>
-    <div id="posts"></div>
     `;
     
     
     const html = `
+    
     <div class='admin-container'>
     ${htmlInput}
-    </div>
+    </div> 
+    
     `;
     ROOT_ADMIN.innerHTML = html;
-    shopAdmin.closeAddProduct();
-    getFormData.getFormPostData(formAddProduct, API_NOTEBOOKS);  
+    this.closeAddProduct();
+    getFormData.getFormPostData(formAddProduct, API_NOTEBOOKS);
+     
     
   }
-  
+
   closeAddProduct() {
     document.querySelectorAll(".admin-form__close").forEach((item) => {
       item.addEventListener("click", () => {

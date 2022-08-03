@@ -2,7 +2,8 @@ import { ROOT_PRODUCTS } from "../../constants/root";
 import localstorageUtils from "../../utils/localStorageUtils";
 import eventProduct from "../../utils/productEventUtils";
 import { error } from "../Error/Error";
-import { DATA_NOTEBOOKS } from "../../constants/api";
+import { API_NOTEBOOKS, DATA_NOTEBOOKS } from "../../constants/api";
+import deleteItem from "../../utils/deleteItem";
 
 class Products {
   constructor() {
@@ -14,7 +15,7 @@ class Products {
   renderProducts(data) {
     const productsStore = localstorageUtils.getProducts();
     let htmlCatalog = "";
-    data.forEach(({ id, name, price, oldPrice, img }) => {
+    data.forEach(({ _id, id, name, price, oldPrice, img }) => {
       if (oldPrice == undefined) {
         oldPrice = "";
       }
@@ -36,6 +37,7 @@ class Products {
       <button class='products-element__button${activeClass}'>
       ${activeText}
       </button>
+      <button class='products-element__remove js-removeproduct' data-id='${_id}'>Удалить</button>
       </li>
       `;
     });
@@ -46,9 +48,10 @@ class Products {
     </ul>
     `;
     ROOT_PRODUCTS.innerHTML = html;
-    productsNotebook.eventListener();
-  }
+    this.eventListener();
+    deleteItem.removeItem(API_NOTEBOOKS,'js-removeproduct');
 
+  }
   async render() {
     const data = await DATA_NOTEBOOKS;
     data ? this.renderProducts(data) : error.render(ROOT_PRODUCTS);

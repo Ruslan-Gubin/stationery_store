@@ -1,15 +1,14 @@
-import {  DATA_NOTEBOOKS } from "../../constants/api";
+import { DATA_NOTEBOOKS } from "../../constants/api";
 import { ROOT_SHOPPING } from "../../constants/root";
 import localstorageUtils from "../../utils/localStorageUtils";
 import { error } from "../Error/Error";
 
 class Shopping {
-
   renderShopping(data) {
     const productsStore = localstorageUtils.getProducts();
     let htmlCatalog = "";
     let sumCatalog = 0;
-    
+
     data.forEach(({ id, name, price }) => {
       if (productsStore.indexOf(id) !== -1) {
         htmlCatalog += `
@@ -21,7 +20,7 @@ class Shopping {
         sumCatalog += price;
       }
     });
-    
+
     const html = `
     <div class='chopping-container'>
     <div class='chopping__close'>
@@ -39,23 +38,21 @@ class Shopping {
     ROOT_SHOPPING.innerHTML = html;
     shoppingPage.eventListener();
   }
-  
-  async render() {
-    const data = await DATA_NOTEBOOKS; 
 
-    data ? this.renderShopping(data) : error.render(ROOT_SHOPPING); 
+  async render() {
+    const data = await DATA_NOTEBOOKS;
+
+    data ? this.renderShopping(data) : error.render(ROOT_SHOPPING);
   }
   eventListener() {
     document.querySelectorAll(".chopping__close").forEach((item) => {
-          item.addEventListener("click", () => {
-            ROOT_SHOPPING.innerHTML = "";
-          });
-        });
-      }
-    }
-    
-    const shoppingPage = new Shopping();
-    
-    
-    export default shoppingPage;
-    
+      item.addEventListener("click", () => {
+        ROOT_SHOPPING.innerHTML = "";
+      });
+    });
+  }
+}
+
+const shoppingPage = new Shopping();
+
+export default shoppingPage;

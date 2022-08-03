@@ -50,5 +50,5 @@ export default localstorageUtils;
 //   b = JSON.parse(b);
 //   console.log( b);
 //   console.log(JSON.parse(d));
-
+// localStorage.clear();
 

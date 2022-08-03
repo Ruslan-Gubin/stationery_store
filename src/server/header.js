@@ -6,5 +6,6 @@ export const HEADER = [
     basket: "https://i.ibb.co/GWFSZkL/shopping-cart-1.png",
     message: 'Сообщить о проблеме',
     search: 'Поиск',
+    addProduct: 'Добавить',
   },
 ];

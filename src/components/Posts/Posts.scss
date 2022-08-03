@@ -1,0 +1,134 @@
+.posts-container {
+  position: fixed;
+  width: 80%;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: $spasing-large;
+  background-color: rgb(240, 240, 239);
+  box-shadow: $box-shadow;
+  overflow: scroll;
+  z-index: 1;
+  .post-form__container {
+    margin-bottom: 15px;
+  }
+  .post-form {
+    padding: 10px;
+    background-color: rgb(255, 255, 254);
+    border-radius: $border-radius-average;
+    font-size: $font-size-average;
+
+    &__title {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    &__title-item {
+      color: $c80;
+      border-bottom: 1px solid $ccb;
+      width: 80%;
+      margin-bottom: 5px;
+    }
+    &__text {
+      display: flex;
+      justify-content: center;
+    }
+    &__text-item {
+      color: $c80;
+      height: 100px;
+      width: 80%;
+      border-bottom: 1px solid $ccb;
+    }
+    &__btn {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    &__btn-item {
+      color: $c80;
+      background-color: rgb(255, 255, 254);
+      height: 30px;
+      border-radius: $border-radius-average;
+      width: 30%;
+      border: 1px solid $ccb;
+      transition: all 0.3s ease;
+      box-shadow: $box-shadow;
+      &:hover {
+        background-color: orange;
+        color: $white;
+      }
+    }
+  }
+  .posts-card {
+    font-size: $font-size-average;
+    display: flex;
+    justify-content: center;
+    &__container {
+      width: 100%;
+      padding-bottom: 10px;
+      margin: 20px 0px;
+      background-color: rgb(255, 255, 255);
+      border-radius: $border-radius-average;
+      font-size: $font-size-average;
+      color: $c80;
+      box-shadow: $box-shadow;
+      padding: $spasing-large;
+    }
+    &__content {
+    }
+    &__content-title {
+      border-bottom: 1px solid $ccb;
+    }
+    &__content-text {
+    }
+    &__content-date {
+      border-bottom: 1px solid $ccb;
+    }
+    &__content-action {
+      margin-top: 10px;
+      display: flex;
+    }
+    &__content-btn {
+      color: $c80;
+      background-color: rgb(240, 240, 239);
+      border-radius: $border-radius-average;
+      height: 30px;
+      width: 20%;
+      border: 1px solid $ccb;
+      transition: all 0.3s ease;
+      box-shadow: $box-shadow;
+      background-color: $white;
+      &:hover {
+          background-color: red;
+        color: $white;
+      }
+    }
+}
+.post-form__close {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    top: 20px;
+    right: 20px;
+}
+.post-form__close-element {
+    width: 35px;
+height: 35px;
+top: 20px;
+right: 20px;
+background-color: rgb(240, 240, 239);
+cursor: pointer;
+color: rgb(82, 78, 78);
+text-align: center;
+justify-self: center;
+font-size: 20px;
+border: 1px solid $ccb;
+border-radius: 10px;
+box-shadow: $box-shadow;
+&:hover{
+    background-color: $c80;
+    color: $ccb;
+}
+}
+}

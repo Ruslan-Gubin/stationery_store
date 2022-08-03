@@ -8,12 +8,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      &__addproduct{
+        @extend %header-message;
+        position: relative;
+        right: 30px;
+      }
       &__logo {
         width: 250px;
         height: 120px;
       }
       &__search {
-        width: 600px;
+        width: 500px;
         height: 50px;
         border-radius: 15px;
         background-color: #f7db5b;

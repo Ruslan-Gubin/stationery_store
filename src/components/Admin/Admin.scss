@@ -1,7 +1,7 @@
-.admin-container {
+
+  .admin-container {
     position: fixed;
-    width: 80%;
-    height: 90vh;
+    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -11,53 +11,59 @@
     box-shadow: $box-shadow;
     overflow: scroll;
     .admin-form {
-    }
-    .admin-form__id {
-    }
-    .admin-form__element {
-        display: block;
+      &__id {
+      }
+      &__element {
+        box-shadow: $box-shadow;
         width: 100%;
-        height: calc(2.25rem + 2px);
         padding: 0.375rem 0.75rem;
-        font-family: inherit;
-        font-size: 1rem;
-        font-weight: 400;
+        font-size: 1.5rem;
         line-height: 1.5;
-        color: #212529;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #bdbdbd;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-    .admin-form__name {
-    }
-    .admin-form__price {
-    }
-    .admin-form__oldprice {
-    }
-    .admin-form__img {
-    }
-    .admin-form__btn {
-    }
-    .admin-form__close {
+        color: $c80;
+        border-bottom: 1px solid $ccb;
+        transition: border-color 1s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      &__name {
+      }
+      &__price {
+      }
+      &__oldprice {
+      }
+      &__img {
+      }
+    &__btn {
+        margin-top: 10px;
+        color: $c80;
+        background-color: rgb(255, 255, 254);
+        height: 30px;
+        border-radius: $border-radius-average;
+        width: 30%;
+        border: 1px solid $ccb;
+        transition: all 0.3s ease;
+        box-shadow: $box-shadow;
+        &:hover {
+          background-color: orange;
+          color: $white;
+        }
+      }
+      &__close {
         position: fixed;
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 0px;
+      }
+      &__close-element {
         width: 35px;
         height: 35px;
         top: 20px;
         right: 20px;
+        background-color: rgb(195, 65, 65);
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        justify-self: center;
+        font-size: 20px;
+      }
     }
-    .admin-form__close-element {
-        width: 35px;
-    height: 35px;
-    top: 20px;
-    right: 20px;
-    background-color: rgb(195, 65, 65);
-    cursor: pointer;
-    color: white;
-    text-align: center;
-    justify-self: center;
-    font-size: 20px;
-    }
-}
-    
+  }

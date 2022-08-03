@@ -2,11 +2,12 @@ import productsNotebook from "../Products";
 import mainSidebar from "../Sidebar";
 import shopFooter from "../Footer";
 import spinnerMain from "../Spinner";
-import shopAdmin from "../Admin/Admin";
 import { headerShop } from "../Header/Header";
-import postsProducts from "../Posts/Posts";
+import postsProducts from "../Posts";
+
 
 import "../../style/index.scss";
+import { postFormBase } from "../Posts/Posts";
 
 
 class App {
@@ -16,9 +17,10 @@ class App {
     await productsNotebook.render();
     mainSidebar.render();
     shopFooter.render();
+    postsProducts.closePosts();
+    // postsProducts.postFormBase();
+    headerShop.showPostsModels();
     spinnerMain.handleClear();
-    // shopAdmin.render();
-    postsProducts.render();
   }
 }
 
