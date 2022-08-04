@@ -6,7 +6,6 @@ class DeleteItem {
           if (event.target.classList.contains(classItem)) {
             const id = event.target.getAttribute("data-id");
             await getDataCtatalog.removeData(url, id);
-            console.log('delete Item');
           }
         });
       }

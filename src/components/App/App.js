@@ -5,10 +5,7 @@ import spinnerMain from "../Spinner";
 import { headerShop } from "../Header/Header";
 import postsProducts from "../Posts";
 
-
 import "../../style/index.scss";
-import { postFormBase } from "../Posts/Posts";
-
 
 class App {
   async render() {
@@ -18,49 +15,10 @@ class App {
     mainSidebar.render();
     shopFooter.render();
     postsProducts.closePosts();
-    // postsProducts.postFormBase();
     headerShop.showPostsModels();
+
     spinnerMain.handleClear();
   }
 }
 
 export default new App();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

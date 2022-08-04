@@ -1,0 +1,35 @@
+%btn-post__red{
+  color: $c80;
+  background-color: rgb(240, 240, 239);
+  border-radius: $border-radius-average;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $ccb;
+  transition: all 0.3s ease;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  font-size: 1.2rem;
+  &:hover {
+      background-color: red;
+    color: $white;
+  }
+}
+%btn-post__orange{
+  color: $c80;
+  background-color: rgb(240, 240, 239);
+  border-radius: $border-radius-average;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $ccb;
+  transition: all 0.3s ease;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  font-size: 1.2rem;
+  &:hover {
+    background-color: orange;
+    color: $white;
+  }
+    }
+    
+
+
