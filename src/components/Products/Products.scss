@@ -58,3 +58,24 @@
     }
   }
 }
+.products-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  & li{
+    margin-right: 20px;
+    margin-top: 10px;
+    border: 1px solid $c80;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 18px;
+    &:hover{
+      background-color: orange;
+    }
+  }
+  .active{
+   background-color: orange;
+ }
+}

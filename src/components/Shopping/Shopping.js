@@ -9,12 +9,14 @@ class Shopping {
     let htmlCatalog = "";
     let sumCatalog = 0;
 
-    data.forEach(({ id, name, price }) => {
-      if (productsStore.indexOf(id) !== -1) {
+    data.forEach(({ _id, name, price, img }) => {
+      if (productsStore.indexOf(_id) !== -1) {
         htmlCatalog += `
         <tr class='chopping-element'>
+        
+        <td class='chopping-element__img'><img src='${img}'/></td>
         <td class='chopping-element__name'>${name}</td>
-        <td class='chopping-element__price'>${price.toLocaleString()}</td>
+        <td class='chopping-element__price'>${price.toLocaleString()} Rub</td>
         </tr>
         `;
         sumCatalog += price;
@@ -30,7 +32,7 @@ class Shopping {
     ${htmlCatalog}
     <tr class='chopping-element'>
     <td class='chopping-element__name'>Сумма:</td>
-    <td class='chopping-element__price'>${sumCatalog.toLocaleString()}</td>
+    <td class='chopping-element__price'>${sumCatalog.toLocaleString()} Rub</td>
     </tr>
     </table>
     </div>

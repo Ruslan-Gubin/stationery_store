@@ -18,12 +18,10 @@ class ProductStorage {
           event.target.classList.add(this.classNameActive);
           event.target.innerHTML = this.labelRemove;
           headerShop.render((productsStore.length += 1));
-          console.log('add class');
         } else {
             event.target.classList.remove(this.classNameActive);
             event.target.innerHTML = this.labelAdd;
             headerShop.render((productsStore.length -= 1));
-            console.log('delete class class');
         }
     }
 });

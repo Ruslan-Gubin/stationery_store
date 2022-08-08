@@ -11,6 +11,10 @@
     box-shadow: $box-shadow;
     overflow: scroll;
     .chopping-element {
+        &__img{
+            height: 50px;
+            width: 50px;
+        }
         &__name {
             font-family: $Montserat;
             padding: $spasing-medium;
