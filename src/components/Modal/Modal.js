@@ -1,30 +1,22 @@
-import { _createModal } from "../../plugins/modal";
+import { confirmModal, priceModal, _createModal } from "../../plugins/modal";
+
 
 class Modal {
-  constructor() {
-    this.$modal = _createModal();
+  constructor(options) {
+    this.$modal = options.$modal;
     this.amimationSpeed = 200;
     this.closing = false;
-    this.openClass = ".header-element__registration";
-    this.closeClass = ".modal-close";
     this.ActivClassName = "open";
     this.ActivClassNameHide = "hide";
     this.destroyed = false;
   }
   
-  async render() {
-    this.open();
-    this.closeModal();
-  
-  }
   
   open() {
     if (this.destroyed) {
       return console.log("Modal is destroyed");
     }
-    document.querySelector(this.openClass).addEventListener("click", () => {
       !this.closing && this.$modal.classList.add(this.ActivClassName);
-    });
   }
   
   close() {
@@ -58,6 +50,13 @@ class Modal {
   }
 }
 
-const modal = new Modal();
+export  const modalShowPrice = new Modal({
+  $modal: _createModal(priceModal)
+});
 
-export default modal;
+
+export const configModal = new Modal({
+  $modal: _createModal(confirmModal)
+});
+
+export default {};

@@ -6,8 +6,8 @@ import { headerShop } from "../Header/Header";
 import postsProducts from "../Posts";
 import "../../style/index.scss";
 import productsNotebookTest from "../Products/ProductPageTest";
-import modal from "../Modal/Modal";
-
+import select from '../Select/testSelect';
+import as from '../Modal';
 
 
 
@@ -24,7 +24,7 @@ class App {
     postsProducts.closePosts();
     headerShop.showPostsModels();
    
-modal.render();
+
 
     spinnerMain.handleClear();
   }

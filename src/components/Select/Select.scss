@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+$height: 46px;
+
+
+$easing: cubic-bezier(.25,1.7,.35,.8);
+$duration: 0.5s;
+
+
+
+.select {
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  margin-left: 20%;
+  margin-top: 5%;
+  width: 500px;
+  background-color: rgb(255, 247, 247);
+  z-index: 100;
+
+  &.open {
+    .select__dropdown {
+      display: block;
+    }
+    .select__input {
+      border-bottom: none;
+    }
+    .select__backdrop {
+      display: block;
+    }
+  }
+  &__input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: $height;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+    justify-content: space-between;
+    & span:nth-last-child(1) {
+      font-size: 20px;
+    }
+    .arrow-down{
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border-top: 2px solid rgb(129, 126, 126);
+      border-right: 2px solid rgb(129, 126, 126);
+      transform: rotate(135deg);
+  cursor: pointer;
+  transition: all .3s ease-in;
+}
+    .arrow-up{
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border-top: 2px solid rgb(129, 126, 126);
+      border-right: 2px solid rgb(129, 126, 126);
+      transform: rotate(-1125deg);
+  cursor: pointer;
+  transition: all .3s ease-in;
+}
+    
+
+
+  }
+  &__dropdown {
+    background-color: rgb(255, 247, 247);
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: $box-shadow;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__backdrop {
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+  }
+
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    &.selected {
+      background-color: rgb(205, 186, 116);
+    }
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+      transition: 0.15s background-color ease-in;
+      
+      
+    }
+  }
+}

@@ -1,5 +1,6 @@
-import modal from "../components/Modal/Modal";
+import { modalShowPrice, configModal } from "../components/Modal/Modal";
 import { ROOT_MODAL } from "../constants/root";
+
 
 const fruits = [
   {id: 1, title: 'Яблоки', price: 20, img: 'https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348'},
@@ -13,8 +14,8 @@ const toHTML = fruit => `
           <img class="card-img-top" style="height: 300px;" src="${fruit.img}" alt='${fruit.title}'>
           <div class="card-body">
             <h5 class="card-title">${fruit.title}</h5>
-            <a href="#" class="btn btn-primary" data-btn='price'>Посмотреть цену</a>
-            <a href="#" class="btn btn-danger">Удалить</a>
+            <a href="#" class="btn btn-primary" data-btn='price' data-id='${fruit.id}'>Посмотреть цену</a>
+            <a href="#" class="btn btn-danger" data-btn='remove'>Удалить</a>
           </div>
         </div>
          </div>
@@ -24,7 +25,10 @@ function render  () {
   let html =  fruits.map(toHTML).join('');
   document.querySelector('#fruits').innerHTML = html;
 }
-render();
+
+const aa = document.querySelector('.header-element__logo'); 
+
+  render();
 
 Element.prototype.appendAfter = function(element) {
   element.parentNode.insertBefore(this, element.nextSibling);
@@ -50,7 +54,7 @@ wrap.appendChild(btns);
 return wrap;
 }
 
-let modalData = {
+const modalData = {
 title: 'First Modal',
 closable: true,
 content:`
@@ -60,18 +64,43 @@ content:`
 width: '400px',
   footerButtons:[
    {text: 'Ok', type: 'primary', handler() {
-    modal.setContent('Вы нажали кнопку: Ok');
+    modalShowPrice.close();
     
     }},
     {text: 'Cancel', type: 'danger', handler() {
-      modal.setContent('Вы нажали кнопку: Cansel');
+      modalShowPrice.close();
     }}
   ]
 };
+export const priceModal = {
+  title: 'Цена на товар',
+  closable: true,
+  width: '400px',
+    footerButtons:[
+     {text: 'Закрыть', type: 'primary', handler() {
+      modalShowPrice.close();
+      }}
+    ]
+  };
 
-export function _createModal() {
+
+export const confirmModal = {
+  title: 'Вы уверены',
+  closable: true,
+  width: '400px',
+    footerButtons:[
+     {text: 'Отменить', type: 'primary', handler() {
+      configModal.close();     
+      }},
+     {text: 'Удалить', type: 'primary', handler() {
+      configModal.close();     
+      }}
+    ]
+  };
+
+export function _createModal(modalForm) {
     const DEFAULT_WIDTH = '600px';
-    const {content, title, closable, width, footerButtons} = modalData;
+    const {content, title, closable, width, footerButtons} = modalForm;
     const modal = document.createElement("div");
     modal.classList.add("rmodal");    
   modal.insertAdjacentHTML("afterbegin",`
@@ -95,11 +124,20 @@ export function _createModal() {
   return modal;
 }
 
+
+
 document.addEventListener('click', event => {
   event.preventDefault();
   const btnType = event.target.dataset.btn;
- if (btnType === 'price') {
-console.log('price');
+  const id = +event.target.dataset.id;
+  if (btnType === 'price') {
+    const fruit = fruits.find(f => f.id === id);
+    modalShowPrice.setContent(`
+    <p>Цена на ${fruit.title}: <strong>${fruit.price}$</strong></p>
+    `);
+    modalShowPrice.open();
+ } else if (btnType === 'remove') {
+  configModal.open();
  }
 });
 
