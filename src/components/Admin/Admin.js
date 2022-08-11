@@ -1,7 +1,6 @@
-import { API_NOTEBOOKS } from "../../constants/api";
+import { API_ALBUM, API_NOTEBOOKS } from "../../constants/api";
 import { ROOT_ADMIN } from "../../constants/root";
 import getFormData from "../../utils/getFormData";
-import dragdrop from "../../utils/dragAndDrop";
 
 
 
@@ -16,7 +15,7 @@ class Admin {
     <div class='admin-form__close-element'>Х</div>
     </div>
     <form  class="admin-form" action="/" method="POST" id="formAddProduct">
-    <input type="text" name='id' class="admin-form__element" placeholder='id' />  
+      
     <input type="text" name='name' class="admin-form__element" placeholder='Название товара' />  
     <input type="number"  name='price' class="admin-form__element" placeholder='Стоимость' />  
     <input type="number" name='oldPrice' class="admin-form__element" placeholder='Старая цена' />  
@@ -35,7 +34,7 @@ class Admin {
     `;
     ROOT_ADMIN.innerHTML = html;
     this.closeAddProduct();
-    getFormData.getFormPostData(formAddProduct, API_NOTEBOOKS);
+    getFormData.getFormPostData(formAddProduct, API_ALBUM);
      
     
   }

@@ -1,30 +1,24 @@
-import productsNotebook from "../Products";
-import mainSidebar from "../Sidebar";
 import shopFooter from "../Footer";
 import spinnerMain from "../Spinner";
 import { headerShop } from "../Header/Header";
 import postsProducts from "../Posts";
 import "../../style/index.scss";
-import productsNotebookTest from "../Products/ProductPageTest";
-import select from '../Select/testSelect';
-import as from '../Modal';
 
-
-
+import as from "../Modal";
+import { sidebar } from "../Sidebar/Sidebar";
+import shopAdmin from "../Admin/Admin";
+import { selection } from "../Select/testSelect";
 
 
 class App {
-  async render() {
+async  render() {
     spinnerMain.render();
-    await headerShop.render();
-    await productsNotebook.render();
-    //  await productsNotebookTest.render();
-    mainSidebar.render();
+    headerShop.render();
     shopFooter.render();
     postsProducts.closePosts();
     headerShop.showPostsModels();
-   
-
+    
+    sidebar.render();
 
     spinnerMain.handleClear();
   }

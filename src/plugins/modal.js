@@ -26,9 +26,8 @@ function render  () {
   document.querySelector('#fruits').innerHTML = html;
 }
 
-const aa = document.querySelector('.header-element__logo'); 
-
   render();
+
 
 Element.prototype.appendAfter = function(element) {
   element.parentNode.insertBefore(this, element.nextSibling);

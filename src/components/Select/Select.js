@@ -1,8 +1,6 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
   let text = placeholder ?? 'Placeholder по умолчанию';
   
-
-
   const items = data.map(item => {
     let cls = '';
     if (item.id === selectedId) {
@@ -34,17 +32,17 @@ export class Select {
     this.options = options;
     this.selectedId = options.selectedId;
 
-    this.#render();
-    this.#setup();
+    this.render();
+    this.setup();
   }
 
-  #render() {
+  render() {
     const { placeholder, data } = this.options;
     this.selector.classList.add("select");
     this.selector.innerHTML = getTemplate(data, placeholder, this.selectedId);
   }
 
-  #setup() {
+  setup() {
     this.clickHandler = this.clickHandler.bind(this);
     this.selector.addEventListener("click", this.clickHandler);
     this.arrow = this.selector.querySelector('[data-type="arrow"]');

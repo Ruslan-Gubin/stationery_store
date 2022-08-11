@@ -3,9 +3,6 @@ const Schema = mongoose.Schema;
 
 const productsSchema = new Schema(
   {
-    id: {
-      type: String,
-    },
     name: {
       type: String,
       required: true,
@@ -26,6 +23,12 @@ const productsSchema = new Schema(
   }
 );
 
-const Notebooks = mongoose.model("Notebooks", productsSchema);
+ const Notebooks = mongoose.model("Notebooks", productsSchema);
+const Album = mongoose.model("Album", productsSchema);
+const Pens = mongoose.model("Pens", productsSchema);
 
-module.exports = Notebooks;
+module.exports = {
+  Notebooks,
+  Album,
+  Pens
+};

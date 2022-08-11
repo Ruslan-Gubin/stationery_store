@@ -1,32 +1,33 @@
-const {Notebooks} = require("../models/products");
+const { Album } = require("../models/products");
+
 
 const handleError = (res, error) => res.status(500).send(error.message);
 
 
 
-const getNotebooks = async (req, res) => {
-  await Notebooks.find()
+const getAlbums = async (req, res) => {
+  await Album.find()
     .sort({ createdAt: -1 })
     .then((notebooks) => res.status(200).json(notebooks))
     .catch((error) => handleError(res, error));
 };
 
-const getOneNotebook = async (req, res) => {
-  await Notebooks.findById(req.params.id)
+const getOneAlbum = async (req, res) => {
+  await Album.findById(req.params.id)
     .then((notebook) => res.status(200).json(notebook))
     .catch((error) => handleError(res, error));
 };
 
-const deleteNotebook = async (req, res) => {
-  await Notebooks.findByIdAndDelete(req.params.id)
+const deleteAlbum = async (req, res) => {
+  await Album.findByIdAndDelete(req.params.id)
     .then(() => res.status(200).json(req.params.id))
     .catch((error) => handleError(res, error));
 };
 
-const editNotebook = async (req, res) => {
+const editAlbum = async (req, res) => {
   const { name, img, price, oldPrice } = req.body;
   const { id } = req.params;
-  await Notebooks.findByIdAndUpdate(
+  await Album.findByIdAndUpdate(
     id,
     { id, name, img, price, oldPrice },
     { new: true }
@@ -35,9 +36,9 @@ const editNotebook = async (req, res) => {
     .catch((error) => handleError(res, error));
 };
 
-const addNotebook = async (req, res) => {
-  const {  name, img, price, oldPrice } = req.body;
-  const notebooks = new Notebooks({  name, img, price, oldPrice });
+const addAlbum = async (req, res) => {
+  const { id, name, img, price, oldPrice } = req.body;
+  const notebooks = new Album({ id, name, img, price, oldPrice });
   await notebooks
     .save()
     .then((notebooks) => res.status(201).json(notebooks))
@@ -45,9 +46,10 @@ const addNotebook = async (req, res) => {
 };
 
 module.exports = {
-  getNotebooks,
-  getOneNotebook,
-  editNotebook,
-  deleteNotebook,
-  addNotebook,
+  getAlbums,
+  getOneAlbum,
+  editAlbum,
+  deleteAlbum,
+  addAlbum,
 };
+

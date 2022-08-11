@@ -1,4 +1,3 @@
-import App from "../components/App";
 import { getDataCtatalog } from "./getDataApiCatalog";
 
 

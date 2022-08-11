@@ -7,9 +7,14 @@
   .sidebar-container {
     padding: 20px;
     font-size: 25px;
-    .sidebar-item {
-      cursor: pointer;
-    }
+    
+      & li {
+        cursor: pointer;
+      }
+    
     
   }
+}
+.selectmenu{
+  border-bottom: 1px dotted $color-blue;
 }

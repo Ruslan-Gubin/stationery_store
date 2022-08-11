@@ -1,9 +1,11 @@
 import { ROOT_SELECT } from "../../constants/root";
 import { Select } from "./Select";
 
-const selection = new Select(ROOT_SELECT, {
+
+
+export const selection = new Select(ROOT_SELECT, {
     placeholder: 'Выберите пожалуйста элемент',
-    selectedId: '2',
+    selectedId: '1',
     data: [
         {id: '1', value: 'React'},
         {id: '2', value: 'Angular'},
@@ -13,9 +15,12 @@ const selection = new Select(ROOT_SELECT, {
         {id: '6', value: 'Nest'}
     ],
     onSelect(item) {
-        console.log('Selected item', item);
+        console.log(item.value);
+      
     }
 });
 
-window.s = selection;
+
+
+
 

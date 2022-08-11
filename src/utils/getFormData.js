@@ -1,4 +1,5 @@
-import { sendRequest } from "./getDataApiCatalog";
+import {  sendRequest } from "./getDataApiCatalog";
+
 
 
 class GetFormData {
