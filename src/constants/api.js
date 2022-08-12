@@ -10,3 +10,4 @@ export const DATA_NOTEBOOKS = getDataCtatalog.getData(API_NOTEBOOKS);
 export const DATA_ALBUM = getDataCtatalog.getData(API_ALBUM);
 export const DATA_PENS = getDataCtatalog.getData(API_PENS);
 export const DATA_POSTS = getDataCtatalog.getData(API_POSTS);
+

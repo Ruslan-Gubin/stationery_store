@@ -1,4 +1,3 @@
-function promise() {}
 
  const p =  new Promise((resolve, reject)=> {
 setTimeout(()=> {

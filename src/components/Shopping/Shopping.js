@@ -1,7 +1,9 @@
-import { DATA_NOTEBOOKS } from "../../constants/api";
+import { DATA_ALBUM, DATA_NOTEBOOKS,  DATA_PENS } from "../../constants/api";
 import { ROOT_SHOPPING } from "../../constants/root";
 import localstorageUtils from "../../utils/localStorageUtils";
 import { error } from "../Error/Error";
+
+
 
 class Shopping {
   renderShopping(data) {
@@ -42,8 +44,17 @@ class Shopping {
   }
 
   async render() {
-    const data = await DATA_NOTEBOOKS;
+    let notebooks = await DATA_NOTEBOOKS;
+    let album = await DATA_ALBUM;
+    let pens = await DATA_PENS;
 
+    function mergeArray (...arays) {
+      let fuulArray = [];
+      arays.forEach(aray => fuulArray = [...fuulArray, ...aray]);
+      return fuulArray;
+    }
+
+    const data = mergeArray(notebooks,album,pens);
     data ? this.renderShopping(data) : error.render(ROOT_SHOPPING);
   }
   eventListener() {
