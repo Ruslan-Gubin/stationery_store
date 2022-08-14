@@ -78,6 +78,7 @@ class Sidebar {
 
 export const sidebar = new Sidebar(ROOT_SIDEBAR, {
   menuId: "1",
+  disables: 'false',
   data: [
     {
       id: "1",
@@ -96,8 +97,7 @@ export const sidebar = new Sidebar(ROOT_SIDEBAR, {
     {
       id: "3",
       value: "Ручки",
-      handler() {
-       
+      handler() {      
         productsPens.render();
       },
     },

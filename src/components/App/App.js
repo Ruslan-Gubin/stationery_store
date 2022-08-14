@@ -12,15 +12,16 @@ import { selection } from "../Select/testSelect";
 
 class App {
 async  render() {
-    spinnerMain.render();
+    // spinnerMain.render();
     headerShop.render();
     shopFooter.render();
     postsProducts.closePosts();
     headerShop.showPostsModels();
     
+
     sidebar.render();
 
-    spinnerMain.handleClear();
+    // spinnerMain.handleClear();
   }
 }
 
