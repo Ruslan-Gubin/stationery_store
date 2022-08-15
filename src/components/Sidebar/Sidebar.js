@@ -9,7 +9,6 @@ const getTemplate = (data = [], menuId) => {
   const items = data.map((item) => {
     let cls = "";
     if (item.id === menuId) {
-      productsNotebook.render();
       cls = "selectmenu";
     }
     return `
@@ -21,6 +20,7 @@ const getTemplate = (data = [], menuId) => {
   <div>
   <ul class="sidebar-container">
   ${items.join("")}
+ 
   </ul>
   </div>
   `;
@@ -78,13 +78,16 @@ class Sidebar {
 
 export const sidebar = new Sidebar(ROOT_SIDEBAR, {
   menuId: "1",
-  disables: 'false',
+  disables: "false",
   data: [
     {
       id: "1",
       value: "Тетради",
       handler() {
-          productsNotebook.render();
+        productsNotebook.render();
+        // productsNotebook.renderStorage();
+        // productsNotebook.removeCard();
+        
       },
     },
     {
@@ -92,17 +95,19 @@ export const sidebar = new Sidebar(ROOT_SIDEBAR, {
       value: "Альбомы",
       handler() {
         productsAlbum.render();
+       
       },
     },
     {
       id: "3",
       value: "Ручки",
-      handler() {      
+      handler() {
         productsPens.render();
+        
       },
     },
   ],
   onSelect(item) {
-    item.handler();  
+    item.handler();
   },
 });

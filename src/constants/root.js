@@ -12,13 +12,3 @@ export const ROOT_SIDEBAR_NOTES = document.querySelector('#sidebarnotes');
 
 
 
-
-
-
-
-
-
-
-
-
-

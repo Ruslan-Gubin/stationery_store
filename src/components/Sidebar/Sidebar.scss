@@ -1,16 +1,19 @@
 #sidebar {
-
   justify-self: center;
   grid-area: sidebar;
   color: $c80;
-
+  
   .sidebar-container {
     padding: 20px;
     font-size: 25px;
     
-      & li {
-        cursor: pointer;
-      }
+    & li {
+      background: -webkit-linear-gradient(90deg, #09022e,#ff1154);background: linear-gradient(90deg, #120a3b,#a2274a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+
+    }
     
     
   }

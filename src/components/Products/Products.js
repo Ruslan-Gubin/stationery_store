@@ -6,7 +6,7 @@ import { headerShop, productsStore } from "../Header/Header";
 
 
 
-class Products {
+export class Products {
  constructor (data, root, url) {
 this.currentPage = 1;
 this.rows = 8;
@@ -21,13 +21,16 @@ this.paginationElement.classList.add('products-pagination');
 this.paginationElement.classList.add('container');
 this.paginationElement.setAttribute('id', 'pagination');
 
-
 this.renderStorage();
-this.removeCard();
+          this.removeCard();
 }
 
  async render () {
-   const data = await this.data;
+   let data = await this.data;
+   data.sort((a,b) => {
+     return a.price - b.price;
+   });
+
    const productsStore = localstorageUtils.getProducts();
    headerShop.render(productsStore.length);
    
@@ -83,12 +86,14 @@ this.removeCard();
           let btn = this.paginationButton(i, data);   
           this.paginationElement.appendChild(btn);
           }
+          
+
         }
 
           paginationButton(page){
             let button = document.createElement('li');
             button.innerText = page;
-            if (this.currentPage == page - 1) button.classList.add('active');
+            if (this.currentPage == page -1) button.classList.add('active');
             button.addEventListener('click', () => {
                         
               this.currentPage = page;
@@ -127,6 +132,7 @@ this.removeCard();
         }
       });
     }
+
   
   }
       

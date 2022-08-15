@@ -18,7 +18,6 @@ class Footer {
         <li></li>
         <li></li>
       </ul>
-      <img class="footer-element__logo" src='${logo}'/>
       <div class="footer-element__coperait"></div>
       </div>
       `;
