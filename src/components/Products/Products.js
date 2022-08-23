@@ -22,7 +22,7 @@ this.paginationElement.classList.add('container');
 this.paginationElement.setAttribute('id', 'pagination');
 
 this.renderStorage();
-          this.removeCard();
+this.removeCard();
 }
 
  async render () {

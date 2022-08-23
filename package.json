@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "server": "nodemon src/server/app.js",
-    "build-dev": "webpack",
+    "build:dev": "set NODE_ENV=development&&webpack",
     "build-prod": "webpack --node-env=production",
     "clear": "rd /s /q dist"
   },
